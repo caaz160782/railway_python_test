@@ -1,0 +1,2 @@
+[phases.start]
+cmd = "hypercorn main:app --bind [::]:${PORT}"
