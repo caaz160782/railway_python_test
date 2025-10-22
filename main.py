@@ -1,11 +1,7 @@
-from flask import Flask
+from fastapi import FastAPI
 
-app = Flask(__name__)
+app = FastAPI()
 
-@app.route("/")
-def index():
-    return "Hello from Railway!"
-
-if __name__ == "__main__":
-    # Optional for local dev, not used in prod
-    app.run(host="0.0.0.0", port=5000)
+@app.get("/")
+def read_root():
+    return {"message": "Hello from FastAPI on Railway!"}
